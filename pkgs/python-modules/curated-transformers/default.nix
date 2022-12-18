@@ -12,7 +12,7 @@
 
 buildPythonPackage rec {
   pname = "curated-transformers";
-  version = "distill-20221214";
+  version = "distill-20221217";
   format = "setuptools";
 
   disabled = pythonOlder "3.7";
@@ -20,10 +20,10 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "explosion";
     repo = "curated-transformers";
-    rev = "36fd6a36768c3bc9662993409ac3784ae5a34994";
-    hash = "sha256-D3t+/1G45i6fCIF1EZ2vGNVEz0eaCqJcRkL8TevR7oQ=";
+    rev = "c164c908c2f7f1d7da383943f924ebb1ee54ad56";
+    hash = "sha256-vuYLmQaDxI0VuWAPuRik0xLiJH5lUomq/nQK0gQUzZQ=";
   };
-  
+
   nativeBuildInputs = [ cython ];
 
   propagatedBuildInputs = [
