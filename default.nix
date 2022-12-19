@@ -5,4 +5,12 @@ rec {
     packageOverrides = import ./overlays/python.nix;
   };
   python3Packages = python3.pkgs;
+
+  spacy-distill =
+    let
+      py = python3.withPackages (ps:
+        with ps; [ cupy curated-transformers ]
+      );
+    in
+    py.overrideAttrs (attr: { meta.mainProgram = "spacy"; });
 }
