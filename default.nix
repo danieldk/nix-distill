@@ -2,7 +2,9 @@
 
 rec {
   python3 = pkgs.python3.override {
+    enableOptimizations = true;
     packageOverrides = import ./overlays/python.nix;
+    self = python3;
   };
   python3Packages = python3.pkgs;
 
