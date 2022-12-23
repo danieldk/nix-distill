@@ -1,12 +1,13 @@
 { fetchFromGitHub, spacy }:
 
-spacy.overrideAttrs (attrs: {
-  version = "distill-20221215";
+spacy.overrideAttrs (attrs: rec {
+  name = "${attrs.pname}-${version}";
+  version = "distill-20221223";
 
   src = fetchFromGitHub {
     owner = "danieldk";
     repo = "spacy";
-    rev = "865f6a156f7790e7d38ed72583cfbee19bc7dcf0";
-    hash = "sha256-zXoxd5dAnvETyn9fmhEQ+6/pc4f4xSiTC/qXpIEuiOA=";
+    rev = "20a76acfe08415cf244f317fa07c98a6b5155bad";
+    hash = "sha256-Nb1pRzrQL9r9jl8RMeCwZTEFYm9txzRaayX3wUxrxuo=";
   };
 })
