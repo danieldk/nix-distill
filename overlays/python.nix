@@ -31,6 +31,8 @@ self: super: {
 
   thinc = self.callPackage ../pkgs/python-modules/thinc { inherit (super) thinc; };
 
+  torch = self.torch-bin;
+
   typer = super.typer.overrideAttrs (attrs: {
     # Multiple tests try to modify the same file.
     disabledTests = attrs.disabledTests ++ [ "test_install_completion" ];
